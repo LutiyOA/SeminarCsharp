@@ -60,6 +60,7 @@ double[] setArrayDouble(int length, int max)
 
 void printTextZadachi(int z)
 {
+    Console.WriteLine("--------------------------------");
     Console.WriteLine($"Текст задания #{textZadanii[z]}");
 }
 
@@ -286,14 +287,14 @@ void testZadanie40()
 //-----------------------------------------------------------
 // Тестирование выполнения заданий
 
-// testZadanie31();
-// testZadanie32();
-// testZadanie33();
-// testZadanie34();
-// testZadanie35();
-// testZadanie36();
-// testZadanie37();
-// testZadanie38();
-// testZadanie39();
+testZadanie31();
+testZadanie32();
+testZadanie33();
+testZadanie34();
+testZadanie35();
+testZadanie36();
+testZadanie37();
+testZadanie38();
+testZadanie39();
 testZadanie40();
 

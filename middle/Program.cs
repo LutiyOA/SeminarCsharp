@@ -32,6 +32,7 @@ string Zadanie23(int n)
 void unitTestZadanie23()
 {
     int n = 10;
+    Console.WriteLine($"----------- Задание 23 ----------------");
     Console.WriteLine(Zadanie23(n));
 }
 
@@ -50,6 +51,7 @@ string Zadanie24(int n)
 void unitTestZadanie24()
 {
     int n = 10;
+    Console.WriteLine($"----------- Задание 24 ----------------");
     Console.WriteLine(Zadanie24(n));
 }
 
@@ -74,6 +76,7 @@ void unitTestZadanie25()
 {
     int a = 100;
     (int, int) res = Zadanie25(a);
+    Console.WriteLine($"----------- Задание 25 ----------------");
     Console.WriteLine($"Для A={a}: res1={res.Item1}, res2={res.Item2}");
 }
 
@@ -91,7 +94,7 @@ void unitTestZadanie26()
 {
     int a = -3,
         b = 5;
-
+    Console.WriteLine($"----------- Задание 26 ----------------");
     Console.WriteLine($"Для A = {a}, B = {b} Результат ({a})^{b} = {Zadanie26(a, b)}");
 }
 
@@ -143,6 +146,7 @@ void unitTestZadanie27()
 {
     int n = -4506080;
     (int, int) result = Zadanie27(n);
+    Console.WriteLine($"----------- Задание 27 ----------------");
     Console.WriteLine($"Число: {n}    Количество цифр: {result.Item1} Количество уникальных цифр: {result.Item2}");
 }
 
@@ -161,7 +165,7 @@ int Zadanie28(int n)
 void unitTestZadanie28()
 {
     int n = -456550;
-
+    Console.WriteLine($"----------- Задание 28 ----------------");
     Console.WriteLine($"Число: {n}    Сумма цифр: {Zadanie28(n)}");
 }
 
@@ -185,6 +189,7 @@ ulong Zadanie29(uint n)
 
 void unitTestZadanie29()
 {
+    Console.WriteLine($"----------- Задание 29 ----------------");
     Console.Write("Введите n: ");
     uint n = uint.Parse(Console.ReadLine()!);
 
@@ -205,11 +210,10 @@ string Zadanie30(int n)
     return result;
 }
 
-
-
 void unitTestZadanie30()
 {
     int n;
+    Console.WriteLine($"----------- Задание 30 ----------------");
     do
     {
         Console.Write("Введите n( >=0 ): ");
@@ -219,12 +223,12 @@ void unitTestZadanie30()
 }
 
 // ----------------------------
-// unitTestZadanie23();
-// unitTestZadanie24();
-// unitTestZadanie25();
-// unitTestZadanie26();
-// unitTestZadanie27();
-// unitTestZadanie28();
-// unitTestZadanie29();
+unitTestZadanie23();
+unitTestZadanie24();
+unitTestZadanie25();
+unitTestZadanie26();
+unitTestZadanie27();
+unitTestZadanie28();
+unitTestZadanie29();
 unitTestZadanie30();
 

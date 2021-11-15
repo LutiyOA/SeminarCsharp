@@ -17,23 +17,28 @@ string[] textZadanii = new string[] {
 /*
 Общие вспомогательные методы для всех заданий
 */
-void printArray(int[] array)
+string printArray(int[] array)
 {
+    string result = string.Empty;
     foreach (int i in array)
-        Console.WriteLine(i);
+        result += $"{i} ";
+
+    return result;
 }
 
-void printArrayZagolovok(string zagolovok, int[] array)
+string printArrayZagolovok(string zagolovok, int[] array)
 {
-    Console.WriteLine(zagolovok);
-    printArray(array);
+    return zagolovok + printArray(array);
 }
 
-void printArrayDouble(string Zagolovok, double[] array)
+string printArrayDouble(string Zagolovok, double[] array)
 {
-    Console.WriteLine(Zagolovok);
+    string result = Zagolovok;
+
     for (int i = 0; i < array.Length; i++)
-        Console.WriteLine(array[i]);
+        result += array[i]+" ";
+
+    return result;
 }
 
 int[] setArray(int length, int min, int max)
@@ -58,10 +63,9 @@ double[] setArrayDouble(int length, int max)
     return array;
 }
 
-void printTextZadachi(int z)
+string printTextZadachi(int z)
 {
-    Console.WriteLine("--------------------------------");
-    Console.WriteLine($"Текст задания #{textZadanii[z]}");
+    return ($"--------------------------------\n\rТекст задания #{textZadanii[z]}");
 }
 
 int[] changeArray(int[] array, int koeff)
@@ -78,12 +82,12 @@ int[] changeArray(int[] array, int koeff)
 void Zadanie31()
 {
     int[] array = setArray(8, 0, new Random().Next(0, 100));
-    printArray(array);
+    Console.WriteLine(printArray(array));
 }
 
 void testZadanie31()
 {
-    printTextZadachi(0);
+    Console.WriteLine(printTextZadachi(0));
     Zadanie31();
 }
 
@@ -91,12 +95,12 @@ void testZadanie31()
 void Zadanie32()
 {
     int[] array = setArray(8, 0, 2);
-    printArray(array);
+    Console.WriteLine(printArray(array));
 }
 
 void testZadanie32()
 {
-    printTextZadachi(1);
+    Console.WriteLine(printTextZadachi(1));
     Zadanie32();
 }
 
@@ -105,7 +109,7 @@ void testZadanie32()
 int[] Zadanie33()
 {
     int[] array = setArray(12, 0, 10);
-    printArray(array);
+    Console.WriteLine(printArray(array));
     int[] result = new int[2] { 0, 0 };
     foreach (int i in array)
         if (i > 0)
@@ -118,7 +122,7 @@ int[] Zadanie33()
 
 void testZadanie33()
 {
-    printTextZadachi(2);
+    Console.WriteLine(printTextZadachi(2));
     int[] res = Zadanie33();
     Console.WriteLine($"Сумма положительных значений массива: {res[0]}, отрицательных: {res[1]}");
 }
@@ -131,12 +135,13 @@ int[] Zadanie34(int[] array)
 
 void testZadanie34()
 {
-    printTextZadachi(3);
+    Console.WriteLine(printTextZadachi(3));
 
     int[] array = setArray(10, -100, 101);
-    printArrayZagolovok("Начальный массив:", array);
+    Console.WriteLine(printArrayZagolovok("Начальный массив: ", array));
+
     int[] res = Zadanie34(array);
-    printArrayZagolovok("Результирующий массив:", res);
+    Console.WriteLine(printArrayZagolovok("Результирующий массив: ", res));
 }
 
 // 35. Определить, присутствует ли в заданном массиве, некоторое число"
@@ -155,12 +160,12 @@ bool Zadanie35(int[] array, int searchNumber)
 
 void testZadanie35()
 {
-    printTextZadachi(4);
+    Console.WriteLine(printTextZadachi(4));
     int searchNumber = -7;
 
     int[] array = setArray(10, -10, 11);
 
-    printArrayZagolovok("Начальный массив:", array);
+    Console.WriteLine(printArrayZagolovok("Начальный массив: ", array));
     Console.WriteLine($"Число {searchNumber} в данном массиве " + (Zadanie35(array, searchNumber) ? "" : "не ") + "присутствует");
 }
 
@@ -179,12 +184,12 @@ int[] Zadanie36(int[] array)
 
 void testZadanie36()
 {
-    printTextZadachi(5);
+    Console.WriteLine(printTextZadachi(5));
 
     int length = 10;
     int[] array = setArray(length, 100, 1000);
 
-    printArrayZagolovok("Начальный массив:", array);
+    Console.WriteLine(printArrayZagolovok("Начальный массив: ", array));
     int[] res = Zadanie36(array);
     Console.WriteLine($"Количество четных чисел в данном массиве: {res[0]}, нечетных: {res[1]}");
 }
@@ -202,12 +207,12 @@ int Zadanie37(int[] array)
 
 void testZadanie37()
 {
-    printTextZadachi(6);
+    Console.WriteLine(printTextZadachi(6));
 
     int length = 123;
     int[] array = setArray(length, -10, 200);
 
-    printArrayZagolovok("Начальный массив:", array);
+    Console.WriteLine(printArrayZagolovok("Начальный массив: ", array));
 
     Console.WriteLine($"Количество чисел в массиве из диапазона [10,99]: {Zadanie37(array)}");
 }
@@ -224,12 +229,12 @@ int Zadanie38(int[] array)
 
 void testZadanie38()
 {
-    printTextZadachi(7);
+    Console.WriteLine(printTextZadachi(7));
 
     int length = 10;
     int[] array = setArray(length, -10, 11);
 
-    printArrayZagolovok("Начальный массив:", array);
+    Console.WriteLine(printArrayZagolovok("Начальный массив: ", array));
 
     Console.WriteLine($"Сумма элементов массива, стоящих на нечетной позиции: {Zadanie38(array)}");
 }
@@ -248,14 +253,14 @@ int[] Zadanie39(int[] array)
 
 void testZadanie39()
 {
-    printTextZadachi(8);
+    Console.WriteLine(printTextZadachi(8));
 
     int length = 11;
     int[] array = setArray(length, -5, 6);
 
-    printArrayZagolovok("Начальный массив:", array);
+    Console.WriteLine(printArrayZagolovok("Начальный массив: ", array));
     int[] res = Zadanie39(array);
-    printArrayZagolovok("Произведения пар элементов:", res);
+    Console.WriteLine(printArrayZagolovok("Произведения пар элементов: ", res));
 }
 
 // 40. В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
@@ -274,12 +279,12 @@ double Zadanie40(double[] array)
 
 void testZadanie40()
 {
-    printTextZadachi(9);
+    Console.WriteLine(printTextZadachi(9));
 
     int length = 10;
     double[] array = setArrayDouble(length, 5);
 
-    printArrayDouble("Начальный массив:", array);
+    Console.WriteLine(printArrayDouble("Начальный массив: ", array));
 
     Console.WriteLine($"Разница между max и min элементами: {Zadanie40(array)}");
 }

@@ -104,11 +104,11 @@ void testZadanie32()
     Zadanie32();
 }
 
-// 33. Задать массив из 12 элементов, заполненных числами из [0,9]. 
+// 33. Задать массив из 12 элементов, заполненных числами из [-9,9]. 
 //     Найти сумму положительных/отрицательных элементов массива",
 int[] Zadanie33()
 {
-    int[] array = setArray(12, 0, 10);
+    int[] array = setArray(12, -9, 10);
     Console.WriteLine(printArray(array));
     int[] result = new int[2] { 0, 0 };
     foreach (int i in array)

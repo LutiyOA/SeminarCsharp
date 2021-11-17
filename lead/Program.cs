@@ -126,6 +126,8 @@ void testZadanie44()
         Console.WriteLine("Прямые параллельны");
 }
 
+// Запуск выполнения всех заданий
+
 testZadanie41();
 testZadanie42();
 testZadanie43();
